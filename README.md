@@ -18,6 +18,13 @@ This app is intended to help with learning the accordion in a visual way by prov
 ___________________________________________________
 
 ## TODO
+* settings input fields
+    * accordion tuning:     dropdown
+    * midi file:            file input
+    * musicXML file:        file input
+    * tempo:                number
+    * tempo decrement:      button
+    * tempo increment:      button
 * add a midi file import feature
     * will have a play/pause button
     * will have a tempo number field and increment/decrement button
@@ -27,7 +34,7 @@ ___________________________________________________
 * add diatonic accordion keyboard UI with the following tunings:
     * G/C/F (Sol)
     * F/Bb/Eb (Fa)
-    * E/A/D (Mi)
+    * E/A/D (Mi)    
 * add state UI for each of the accordion buttons on the keyboard    
     * button state: default
         * display notes label for both push/pull 
@@ -47,7 +54,7 @@ ___________________________________________________
 
 
 ## Misc Notes
-* Ideally the midi and musicXML files are parallel
+* Ideally the imported midi and musicXML files will be parallel (not from different sources)
 * an example of ideal user workflow would be exporting sheet music (midi & musicXML) from Musescore and then importing here
 
 ## maybe laters
