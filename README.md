@@ -25,6 +25,7 @@ ___________________________________________________
     * tempo:                number
     * tempo decrement:      button
     * tempo increment:      button
+    * play/pause:           button
 * add a midi file import feature
     * will have a play/pause button
     * will have a tempo number field and increment/decrement button
