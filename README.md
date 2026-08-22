@@ -48,10 +48,16 @@ ___________________________________________________
         * button label font color of the associated note (left/right) will become black instead of light grey
     * bellows state: default/pull
         * notes played/buttons selected will be for pull
+* add a play along feature
+    * play/pause button
+    * based on the tempo, 
+        * the midi file audio will be played by the browser
+        * sheet music will display a line over the current note/location in the sheet music
+        * the accordion layout will display the mappings for the midi file/musicXML by highlighting buttons
 * default sample files for the app
     * scales
-    * Ramon Ayala
-    * Los Tigres Del Norte
+    * Ramon Ayala - tragos amargos
+    * Los Tigres Del Norte - la puerta negra
 
 
 ## Misc Notes
