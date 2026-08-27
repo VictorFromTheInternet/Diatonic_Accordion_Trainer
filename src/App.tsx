@@ -1,25 +1,28 @@
-import { useUpdateCount } from './store'
-import './App.css'
+import { useUpdateControls } from './store';
+import AccordionKeyboard from './components/AccordionKeyboard';
+import ControlPanel from './components/ControlPanel';
+import SheetMusicDisplay from './components/SheetMusicDisplay';
+import './App.css';
 
 function App() {
   // initiating a global variable
-  const count = useUpdateCount((state)=>state.count);
+  const isPlaying = useUpdateControls((state)=>state.isPlaying);
+  const tempo = useUpdateControls((state)=>state.tempo);
+  const tuning = useUpdateControls((state)=>state.tuning);
 
-  return <ExampleComponent count={count}/>;
+  return <>
+    <nav>
+      <ControlPanel></ControlPanel>
+    </nav>    
+    <main>
+      <div className="row content-display-wrapper">
+        <div className="col keyboard-display-container"><AccordionKeyboard></AccordionKeyboard></div>
+        <div className="col music-display-container"><SheetMusicDisplay></SheetMusicDisplay></div>
+      </div>      
+    </main>    
+  </>;
   
 }
 
-const ExampleComponent = ({count}:{count:number}) =>{
-  const increment = useUpdateCount((state)=>state.increment);
-  const decrement = useUpdateCount((state)=>state.decrement);
-
-  return(
-    <div>
-      <div><button onClick={increment}>+</button></div>
-      {count}
-      <div><button onClick={decrement}>-</button></div>
-    </div>
-  )
-};
 
 export default App

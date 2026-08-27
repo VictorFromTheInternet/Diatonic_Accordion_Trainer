@@ -1,23 +1,27 @@
 import {create} from 'zustand';
 
 
-type CounterStore = {
-    count: number,
-    increment: ()=>void,
-    decrement: ()=>void
+type ControlState = {
+    isPlaying: boolean;
+    tempo: number;
+    tuning: string;
 }
 
-// This is a custom hook for updating the value/state 
-// of a variable with global context as defined by
-// Zustand, as a result the naming convention will be 
-// 'use___'
-export const useUpdateCount = create<CounterStore>((set)=>({
-    count: 0,
-    increment: ()=>{
-        set((state)=>({count: state.count + 1}))
-    },
-    decrement: ()=>{
-        set((state)=>({count: state.count - 1}))
-    }
+type ControlAction = {
+    updateIsPlaying: (isPlaying: ControlState['isPlaying']) => void;
+    updateTempo: (tempo: ControlState['tempo']) => void;
+    updateTuning: (tuning: ControlState['tuning']) => void;
+}
+
+export const useUpdateControls = create<ControlState & ControlAction>()((set) => ({
+    // initial state
+    isPlaying: false, 
+    tempo: 110, 
+    tuning: 'GCF', 
+
+    // actions
+    updateIsPlaying: (isPlaying) => set(() => ({ isPlaying: isPlaying })),
+    updateTempo: (tempo) => set(() => ({ tempo: tempo })),
+    updateTuning: (tuning) => set(() => ({ tuning: tuning })),
 }));
 
