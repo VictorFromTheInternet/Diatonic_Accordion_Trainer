@@ -11,18 +11,18 @@ nav{
 }
 main{
   width: 100%;
-  height: calc(100vh - 2rem); 
+  /* height: calc(100vh - 2rem);  */
 }
 
 /* layout and structure */
 .row{
   display: flex;
   flex-direction: row;
-  height: 100%;
+  min-height: 100%;
 }
 .col{
   flex-grow: 1;
-  height: 100%;
+  min-height: 100%;
 }
 
 
