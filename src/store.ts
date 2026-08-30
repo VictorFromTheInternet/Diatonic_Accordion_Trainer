@@ -20,7 +20,7 @@ export const useUpdateControls = create<ControlState & ControlAction>()((set) =>
     isPlaying: false, 
     tempo: 110, 
     tuning: 'GCF', 
-    bellowsOut: false, 
+    bellowsOut: true, 
 
     // actions
     updateIsPlaying: (isPlaying) => set(() => ({ isPlaying: isPlaying })),

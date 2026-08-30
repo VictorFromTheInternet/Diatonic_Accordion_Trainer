@@ -44,20 +44,17 @@ function AccordionButton({noteData, bellowsOut}: AccordionButtonProps) {
       className={`accordion-button ${(bellowsOut && isPressed)? "accordion-button-pressed accordion-button-out":""} ${(!bellowsOut && isPressed)? "accordion-button-pressed accordion-button-in":""}`}
     >      
       <span>{noteData.labelIn}</span>
+      <div className="vertical-line"></div>
       <span>{noteData.labelOut}</span>          
     </button>
   );
 }
 
 function AccordionKeyboard({bellowsOut}: AccordionKeyboardProps) {
-    const accordionNotes: Note[] = gcf_buttons;
-    //const [bellowsOut, setBellowsOut] = useState(true);
+    const accordionNotes: Note[] = gcf_buttons;    
 
     return (
-    <>
-      {/* <div>
-        <button onClick={()=>{setBellowsOut(!bellowsOut)}}>Bellows: {`${bellowsOut?'out':'in'}`}</button>
-      </div> */}
+    <>      
       <div className="accordion-keyboard">
         <div className="accordion-row">
           {accordionNotes.filter((elm)=>elm.row == 1).map((note) => (

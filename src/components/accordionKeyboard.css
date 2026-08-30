@@ -28,9 +28,9 @@
     flex-wrap: nowrap;    
     justify-content: center;
     align-items: center;
-    /* gap: 4px; */
+    gap: 2px;
 
-    box-shadow: -4px 6px 2px rgba(150,80,80,1);
+    box-shadow: 0px 8px 2px rgba(150,80,80,1);
 }
 
 .accordion-button span{
@@ -39,21 +39,26 @@
     color: black;
     flex-grow: 1;
 }
+.accordion-button .vertical-line{
+    height: 2rem;
+    border: 1px solid rgba(200,200,200,1);
+}
+
 .accordion-button-pressed {         
-    box-shadow: 0px 0px 2px rgba(150,80,80,1);
+    box-shadow: 0px 0px 0px rgba(150,80,80,1);
 }
 .accordion-button-pressed span {
     color: white;    
 }
 .accordion-button-in{
-    background-color: rgba(100,100,255,1);   
-}
-.accordion-button-out{
     background-color: rgba(100,200,100,1);   
 }
-.accordion-button-in span:nth-child(1){
-    display: none;
+.accordion-button-out{
+    background-color: rgba(100,100,255,1);   
 }
-.accordion-button-out span:nth-child(2){
+.accordion-button-in span:nth-of-type(1),
+.accordion-button-out span:nth-of-type(2),
+.accordion-button-in .vertical-line,
+.accordion-button-out .vertical-line{
     display: none;
 }

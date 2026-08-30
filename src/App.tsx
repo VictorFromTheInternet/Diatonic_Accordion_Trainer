@@ -6,10 +6,10 @@ import './App.css';
 
 function App() {
   // initiating a global variable
-  const isPlaying = useUpdateControls((state)=>state.isPlaying);
-  const tempo = useUpdateControls((state)=>state.tempo);
-  const tuning = useUpdateControls((state)=>state.tuning);
-  const bellowsOut = useUpdateControls((state)=>state.bellowsOut);
+  const isPlaying = useUpdateControls((state)=>state.isPlaying); // false
+  const tempo = useUpdateControls((state)=>state.tempo); // 110
+  const tuning = useUpdateControls((state)=>state.tuning); // GCF
+  const bellowsOut = useUpdateControls((state)=>state.bellowsOut); // true
 
   // actions
   const updateIsPlaying = useUpdateControls((state)=> state.updateIsPlaying)
