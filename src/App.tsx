@@ -28,7 +28,12 @@ function App() {
       <div className="row content-display-wrapper">        
         <div className="col keyboard-display-container">
           <div>
-            <Button onClick={()=>updateBellowsOut(!bellowsOut)}>Bellows: {`${bellowsOut?'out':'in'}`}</Button>
+            <Button 
+              onClick={()=>updateBellowsOut(!bellowsOut)}
+              className="bg-blue-50 border-blue-100 border-2 hover:bg-blue-200 hover:border-blue-300 text-black"
+              >
+              Bellows: {`${bellowsOut?'out':'in'}`}
+              </Button>
           </div>
           <AccordionKeyboard bellowsOut={bellowsOut}></AccordionKeyboard>
         </div>
