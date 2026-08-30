@@ -42,13 +42,13 @@ function ControlPanel() {
             <DropdownMenuContent className="w-40" align="start">
               <DropdownMenuGroup>
                 <DropdownMenuLabel>Keys:</DropdownMenuLabel>
-                <DropdownMenuItem>
-                  GCF / SOL                  
+                <DropdownMenuItem onClick={()=>updateTuning("Sol")}>
+                  GCF / Sol                  
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>updateTuning("Fa")}>
                   FB♭E♭ / Fa                  
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={()=>updateTuning("Mi")}>
                   EAD / Mi
                 </DropdownMenuItem>
               </DropdownMenuGroup>
