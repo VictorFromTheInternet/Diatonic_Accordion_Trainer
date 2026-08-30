@@ -36,9 +36,15 @@ function ControlPanel() {
       <div className="flex justify-center align-center">
         <nav className="flex items-center ml-2 mr-2 gap-2">
           <Button onClick={()=>updateIsPlaying(!isPlaying)}>{isPlaying?"▶️":"⏸️"}</Button>
-          <Input type="number" value={tempo} onChange={(e)=>updateTempo(Number.parseInt(e.target.value))}></Input>
+          <Input 
+            type="number" 
+            value={tempo} 
+            onChange={(e)=>updateTempo(Number.parseInt(e.target.value))}
+            className="max-w-20"
+            >
+            </Input>
           <DropdownMenu>
-            <DropdownMenuTrigger render={<Button variant="outline">Tuning</Button>} />
+            <DropdownMenuTrigger render={<Button variant="outline">Tuning: {tuning} 🔽</Button> } />
             <DropdownMenuContent className="w-40" align="start">
               <DropdownMenuGroup>
                 <DropdownMenuLabel>Keys:</DropdownMenuLabel>
