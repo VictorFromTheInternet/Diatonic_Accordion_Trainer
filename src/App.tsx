@@ -2,6 +2,8 @@ import { useUpdateControls } from './store';
 import AccordionKeyboard from './components/AccordionKeyboard';
 import ControlPanel from './components/ControlPanel';
 import SheetMusicDisplay from './components/SheetMusicDisplay';
+import {Button} from "@/components/ui/button"
+
 import './App.css';
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
       <div className="row content-display-wrapper">        
         <div className="col keyboard-display-container">
           <div>
-            <button onClick={()=>updateBellowsOut(!bellowsOut)}>Bellows: {`${bellowsOut?'out':'in'}`}</button>
+            <Button onClick={()=>updateBellowsOut(!bellowsOut)}>Bellows: {`${bellowsOut?'out':'in'}`}</Button>
           </div>
           <AccordionKeyboard bellowsOut={bellowsOut}></AccordionKeyboard>
         </div>
