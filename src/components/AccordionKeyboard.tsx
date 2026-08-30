@@ -16,6 +16,9 @@ type AccordionButtonProps = {
     noteData: Note;
     bellowsOut: boolean;
 }
+type AccordionKeyboardProps = {    
+    bellowsOut: boolean;
+}
 
 function AccordionButton({noteData, bellowsOut}: AccordionButtonProps) {
   // Local state for visual feedback
@@ -46,15 +49,15 @@ function AccordionButton({noteData, bellowsOut}: AccordionButtonProps) {
   );
 }
 
-function AccordionKeyboard() {
+function AccordionKeyboard({bellowsOut}: AccordionKeyboardProps) {
     const accordionNotes: Note[] = gcf_buttons;
-    const [bellowsOut, setBellowsOut] = useState(true);
+    //const [bellowsOut, setBellowsOut] = useState(true);
 
     return (
     <>
-      <div>
+      {/* <div>
         <button onClick={()=>{setBellowsOut(!bellowsOut)}}>Bellows: {`${bellowsOut?'out':'in'}`}</button>
-      </div>
+      </div> */}
       <div className="accordion-keyboard">
         <div className="accordion-row">
           {accordionNotes.filter((elm)=>elm.row == 1).map((note) => (
