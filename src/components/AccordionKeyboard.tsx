@@ -14,9 +14,10 @@ type Note = {
 
 type AccordionButtonProps = {
     noteData: Note;
+    bellowsOut: boolean;
 }
 
-function AccordionButton({noteData}: AccordionButtonProps) {
+function AccordionButton({noteData, bellowsOut}: AccordionButtonProps) {
   // Local state for visual feedback
   const [isPressed, setIsPressed] = useState(false);  
 
@@ -37,7 +38,7 @@ function AccordionButton({noteData}: AccordionButtonProps) {
       onPointerDown={handlePress}
       onPointerUp={handleRelease}
       onPointerLeave={handleRelease} // Catch if the user drags their finger off the button
-      className={`accordion-button ${isPressed ? "accordion-button-pressed":""} `}
+      className={`accordion-button ${(bellowsOut && isPressed)? "accordion-button-pressed accordion-button-out":""} ${(!bellowsOut && isPressed)? "accordion-button-pressed accordion-button-in":""}`}
     >      
       <span>{noteData.labelIn}</span>
       <span>{noteData.labelOut}</span>          
@@ -47,28 +48,30 @@ function AccordionButton({noteData}: AccordionButtonProps) {
 
 function AccordionKeyboard() {
     const accordionNotes: Note[] = gcf_buttons;
-
+    const [bellowsOut, setBellowsOut] = useState(true);
 
     return (
     <>
+      <div>
+        <button onClick={()=>{setBellowsOut(!bellowsOut)}}>Bellows: {`${bellowsOut?'out':'in'}`}</button>
+      </div>
       <div className="accordion-keyboard">
         <div className="accordion-row">
           {accordionNotes.filter((elm)=>elm.row == 1).map((note) => (
-            <AccordionButton key={note.id} noteData={note} />
+            <AccordionButton key={note.id} noteData={note} bellowsOut={bellowsOut}/>
           ))}
         </div>
         <div className="accordion-row">
           {accordionNotes.filter((elm)=>elm.row == 2).map((note) => (
-            <AccordionButton key={note.id} noteData={note} />
+            <AccordionButton key={note.id} noteData={note} bellowsOut={bellowsOut} />
           ))}
         </div>
         <div className="accordion-row">
           {accordionNotes.filter((elm)=>elm.row == 3).map((note) => (
-            <AccordionButton key={note.id} noteData={note} />
+            <AccordionButton key={note.id} noteData={note} bellowsOut={bellowsOut}/>
           ))}
         </div>        
-      </div>
-    
+      </div>      
     </>    
     )
 }
