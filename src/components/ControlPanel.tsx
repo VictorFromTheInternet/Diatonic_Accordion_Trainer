@@ -35,8 +35,8 @@ function ControlPanel() {
 
   return (
     <>
-      <div className="flex justify-center align-center">
-        <nav className="flex items-center ml-2 mr-2 gap-2">
+      <nav className="flex justify-center align-center bg-blue-100">
+        <div className="flex items-center ml-2 mr-2 gap-2">
           <Button 
             onClick={()=>updateIsPlaying(!isPlaying)}
             className="bg-blue-50 border-blue-100 border-2 hover:bg-blue-200 hover:border-blue-300 text-black"
@@ -90,8 +90,8 @@ function ControlPanel() {
               </DropdownMenuGroup>
             </DropdownMenuContent>                
           </DropdownMenu>
-        </nav>
-      </div>      
+        </div>
+      </nav>      
     </>
   )
 }

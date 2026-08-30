@@ -19,14 +19,13 @@ function App() {
   const updateTuning = useUpdateControls((state)=> state.updateTuning)
   const updateBellowsOut = useUpdateControls((state)=> state.updateBellowsOut) 
 
-  return <>
-    <nav>
-      <ControlPanel>        
-      </ControlPanel>
-    </nav>    
+  return (
+  <>  
+    <ControlPanel>        
+    </ControlPanel>    
     <main>
       <div className="row content-display-wrapper">        
-        <div className="col keyboard-display-container">
+        <div className="col keyboard-display-container p-4">
           <div>
             <Button 
               onClick={()=>updateBellowsOut(!bellowsOut)}
@@ -37,10 +36,12 @@ function App() {
           </div>
           <AccordionKeyboard bellowsOut={bellowsOut}></AccordionKeyboard>
         </div>
-        <div className="col music-display-container"><SheetMusicDisplay></SheetMusicDisplay></div>
+        <div className="col music-display-container p-4">
+          <SheetMusicDisplay></SheetMusicDisplay>
+        </div>
       </div>      
     </main>    
-  </>
+  </>)
   
 }
 
