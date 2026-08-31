@@ -4,6 +4,8 @@ import { OpenSheetMusicDisplay } from 'opensheetmusicdisplay'
 import * as Tone from 'tone'
 import { Button } from '@/components/ui/button'
 
+import './SheetMusicDisplay.css'
+
 type MidiTimelineEntry = {
   time: number
   duration: number
@@ -74,8 +76,7 @@ function SheetMusicDisplay() {
     if (!file || !osmdRef.current) return
 
     try {
-      const xml = await file.text()
-      await osmdRef.current.load(xml, file.name)
+      await osmdRef.current.load(file, file.name)
       osmdRef.current.render()
       setStatus(`Loaded MusicXML: ${file.name}`)
     } catch (error) {
@@ -143,13 +144,13 @@ function SheetMusicDisplay() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="sheet-music-container grow flex flex-col gap-2">
       <div className="flex flex-wrap gap-2">
         <label className="cursor-pointer rounded-md border border-input bg-background px-3 py-2 text-sm">
           Load MusicXML
           <input
             type="file"
-            accept=".xml,.musicxml"
+            accept=".xml,.musicxml,.mxl"
             className="hidden"
             onChange={(event) => handleMusicXmlUpload(event.target.files?.[0] ?? null)}
           />
@@ -178,9 +179,8 @@ function SheetMusicDisplay() {
         {status}
       </div>
 
-      <div
-        ref={containerRef}
-        className="min-h-[300px] w-full overflow-auto rounded-md border bg-white p-2"
+      <div ref={containerRef}
+        className="overflow-scroll grow rounded-md border bg-white"
       />
     </div>
   )

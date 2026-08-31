@@ -14,7 +14,7 @@ function App() {
       <ControlPanel />
       <main>
         <div className="row content-display-wrapper">
-          <div className="col keyboard-display-container p-4">
+          <div className="flex items-center flex-col grow-0 keyboard-display-container p-4">
             <div>
               <Button
                 onClick={() => setBellowsOut((value) => !value)}
@@ -25,7 +25,7 @@ function App() {
             </div>
             <AccordionKeyboard bellowsOut={bellowsOut} />
           </div>
-          <div className="col music-display-container p-4">
+          <div className="flex items-center flex-col grow music-display-container p-4">
             <SheetMusicDisplay />
           </div>
         </div>
