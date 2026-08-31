@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { gcf_buttons } from './gcf_tuning'
 
 import './accordionKeyboard.css'
