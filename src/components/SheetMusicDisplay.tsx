@@ -179,8 +179,9 @@ function SheetMusicDisplay() {
         {status}
       </div>
 
-      <div ref={containerRef}
-        className="overflow-scroll grow rounded-md border bg-white"
+      <div
+        ref={containerRef}
+        className="sheet-music-container  overflow-auto rounded-md border bg-white"
       />
     </div>
   )
